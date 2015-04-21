@@ -1,0 +1,32 @@
+$unit: 5px;
+$unit2x: $unit * 2;
+$unit3x: $unit * 3;
+$unit4x: $unit * 4;
+$unit6x: $unit * 6;
+$unit8x: $unit * 8;
+$unit10x: $unit * 10;
+$unit16x: $unit * 16;
+$unit32x: $unit * 32;
+
+$brand-primary: rgb(45, 195, 232);
+
+$brand-dark-bg: rgb(64, 74, 85);
+$brand-dark-color: rgb(255, 255, 255);
+$brand-dark-border: rgb(55, 65, 75);
+$brand-dark-bg-hover: rgb(75, 86, 97);
+$brand-dark-bg-active: rgb(50, 61, 71);
+
+$brand-default-bg: rgb(247, 250, 252);
+$brand-default-color: rgb(44, 44, 44);
+$brand-default-border: rgb(226, 230, 235);
+$brand-default-bg-hover: rgb(255, 255, 255);
+$brand-default-bg-active: rgb(241, 244, 246);
+
+$brand-light-bg: rgb(255, 255, 255);
+$brand-light-color: rgb(68, 68, 68);
+$brand-light-border: rgb(229,232,235);
+$brand-light-bg-hover: rgb(247, 250, 252);
+$brand-light-bg-active: rgb(247, 250, 252);
+
+$navbar-sm-height: 105px;
+$navbar-xs-height: 50px;

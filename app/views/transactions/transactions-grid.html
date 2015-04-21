@@ -1,0 +1,71 @@
+<div>
+  <table ng-if="!view.mobile" st-table="displayedTransactions" st-safe-src="source"
+         class="table table-hover grid-transactions"
+         ng-show="displayedTransactions.length">
+    <thead>
+    <tr>
+      <th class="td-type-check">&nbsp;</th>
+      <th st-sort="amount" class="td-amount"><span translate>COMMON.AMOUNT</span></th>
+      <th st-sort="date" class="td-date"><span translate>COMMON.DATE</span></th>
+      <th st-sort="note" class="td-note"><span translate>COMMON.NOTE</span></th>
+      <th st-sort="sub_category.name" class="td-category" colspan="2"><span translate>COMMON.CATEGORY</span></th>
+      <th st-sort="account.name" class="td-account"><span translate>COMMON.ACCOUNT</span></th>
+      <th st-sort="project.name" class="td-project"><span translate>COMMON.PROJECT</span></th>
+      <th class="td-tags" translate>COMMON.TAGS</th>
+      <th class="td-small td-type-actions">&nbsp</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="transaction in displayedTransactions"
+        ng-class="{'row-type-transfer': isTransactionTypeTransfer(transaction)}">
+      <td class="td-type-check"><input type="checkbox" ng-model="transaction.selected"/></td>
+      <td class="td-small td-amount td-type-amount">{{transaction.amount | money:transaction.currency}}</td>
+      <td class="td-date">{{transaction.date | date}}</td>
+      <td class="td-note">{{transaction.note}}</td>
+      <td class="td-type-icon">
+      <span class="cb-entity-icon" ng-if="transaction.category.image.url">
+        <img ng-src="{{transaction.category.image.url}}"/>
+      </span>
+      </td>
+      <td class="td-small td-category">
+        {{transaction.sub_category.name || transaction.category.name}}
+      </td>
+      <td class="td-small">
+        <span ng-if="transaction.source_account">{{transaction.source_account.name}} &rarr;</span>
+        {{transaction.account.name}}
+      </td>
+      <td class="td-small">{{transaction.project.name}}</td>
+      <td class="td-tags">
+        {{transaction.tags | join:{ text: 'name', separator: ', '} }}
+      </td>
+      <td class="td-small td-type-actions">
+        <a href="#" ng-click="editTransaction(transaction)">
+          <span class="sprite sprite-common-edit-dark cb-icon-edit icon-rounded"></span>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <ul ng-if="view.mobile" class="cb-transactions-list">
+    <li ng-repeat="transaction in source">
+      <input type="checkbox" ng-model="transaction.selected"/>
+
+      <div ng-click="editTransaction(transaction)" class="cb-transaction-heading">
+        <span class="cb-amount">{{transaction.amount | money:transaction.currency}}</span>
+        <span class="cb-date">{{transaction.date | date}}</span>
+      </div>
+      <div ng-click="editTransaction(transaction)">
+        <span class="cb-category-name">
+        <span class="cb-entity-icon" ng-if="transaction.category.image.url">
+          <img ng-src="{{transaction.category.image.url}}"/>
+        </span>
+        {{transaction.sub_category.name || transaction.category.name}}
+          </span>
+        <span class="cb-tags">
+          {{transaction.tags | join:{ text: 'name', separator: ', '} }}
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>

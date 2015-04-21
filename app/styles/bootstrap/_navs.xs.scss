@@ -1,0 +1,9 @@
+@media (max-width: $grid-float-breakpoint-max) {
+  .nav-tabs {
+    li {
+      > a {
+        padding: $unit3x $unit4x !important;
+      }
+    }
+  }
+}

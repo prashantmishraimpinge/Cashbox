@@ -1,0 +1,8 @@
+@media (max-width: $grid-float-breakpoint-max) {
+  .cb-actions-panel {
+    text-align: center;
+    > * {
+      text-align: left;
+    }
+  }
+}

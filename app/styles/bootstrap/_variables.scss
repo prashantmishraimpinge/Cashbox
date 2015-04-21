@@ -1,0 +1,73 @@
+$body-bg: rgb(241, 244, 246);
+$border-radius-base: 0;
+
+//Type
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-base: $font-family-sans-serif;
+$headings-font-family: "Montserrat", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size-base: 15px;
+$text-color: $brand-default-color;
+$font-size-h2: 19px;
+$font-size-h3: 17px;
+
+//Navbar
+$navbar-height: 49px;
+$navbar-inverse-bg: $brand-dark-bg;
+$navbar-inverse-color: $brand-dark-color;
+$navbar-inverse-link-color: $navbar-inverse-color;
+$navbar-inverse-link-active-bg: rgb(255,255,254);
+$navbar-inverse-link-active-color: rgb(45,195,232);
+$navbar-border-radius: 0;
+$navbar-inverse-border: rgb(55,65,75);
+$navbar-inverse-link-hover-bg: $brand-dark-bg-hover;
+$navbar-default-bg: rgb(255,255,254);
+$navbar-default-border: none;
+$navbar-default-link-active-bg: $navbar-default-bg;
+
+//Tabs
+$nav-tabs-active-link-hover-bg: rgb(255,255,254);
+$nav-tabs-active-link-hover-border-color: #eceff2;
+$nav-tabs-border-color: #eceff2;
+
+//Buttons
+$btn-default-bg: $brand-default-bg;
+$btn-default-color: $brand-default-color;
+$btn-default-border: $brand-default-border;
+$btn-default-bg-hover: $brand-default-bg-hover;
+$btn-default-bg-active: $brand-default-bg-active;
+
+$btn-primary-bg: $brand-primary;
+$btn-primary-color: rgb(255, 255, 255);
+$btn-primary-bg-hover: rgb(71, 210, 247);
+$btn-primary-bg-active: rgb(7, 165, 202);
+$btn-primary-border: $btn-primary-bg;
+
+$btn-major-bg: $brand-dark-bg;
+$btn-major-color: $brand-dark-color;
+$btn-major-border: $brand-dark-border;
+$btn-major-bg-hover: $brand-dark-bg-hover;
+$btn-major-bg-active: $brand-dark-bg-active;
+
+//Inputs
+$input-bg: rgb(246,250,253);
+$input-border: rgb(238,240,243);
+$input-height-base: 36px;
+$input-border-focus: $brand-primary;
+$input-bg-focus: rgb(255, 255, 255);
+
+//Modals
+$modal-inner-padding: $unit4x;
+$modal-title-padding: $unit2x $unit4x;
+$modal-title-line-height: $font-size-h3;
+$modal-header-border-color: rgb(220,224,230);
+$modal-content-border-color: rgb(236,239,242);
+$modal-footer-border-color: none;
+
+//Tables
+$table-bg: rgb(255, 255, 255);
+$table-bg-hover: rgb(247, 250, 252);
+$table-border-color: rgb(241, 241, 241);
+$table-cell-padding: $unit2x;
+
+//Breadcrumbs
+$breadcrumb-bg: transparent;

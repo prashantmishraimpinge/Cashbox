@@ -1,0 +1,19 @@
+.cb-search-box {
+  display: inline-block;
+  position: relative;
+
+  input {
+    border-radius: $unit4x;
+    padding-left: 35px;
+    background-color: rgb(255, 255, 255);
+  }
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateX(10px) translateY(-50%);
+    @include sprite(common-search-dark);
+  }
+}

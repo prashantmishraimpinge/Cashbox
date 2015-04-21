@@ -1,0 +1,23 @@
+.check-list {
+  border: 1px solid $input-border;
+  padding: 4px;
+
+  .check-list-item {
+    display: inline-block;
+    list-style-type: none;
+    padding: 3px 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .check-list-item.active {
+    background: $brand-primary;
+    color: #fff;
+    border-color: $brand-primary;
+
+    &:hover {
+      background: $btn-primary-bg-hover;
+    }
+  }
+}

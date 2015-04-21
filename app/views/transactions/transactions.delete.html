@@ -1,0 +1,10 @@
+<div class="modal-header">
+  <h3 class="modal-title" translate>TRANSACTIONS.TRANSACTIONS-DELETE-DIALOG.TITLE</h3>
+</div>
+<div class="modal-body">
+  <p ng-bind-html="'TRANSACTIONS.TRANSACTIONS-DELETE-DIALOG.CONFIRM' | translate:{count:transactions.length}"></p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-danger" ng-click="deleteTransactions()" translate>COMMON.CONTROLS.DELETE</button>
+  <button type="button" class="btn btn-cancel" ng-click="cancel()" translate>COMMON.CONTROLS.CANCEL</button>
+</div>

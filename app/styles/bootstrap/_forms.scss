@@ -1,0 +1,49 @@
+.form-control {
+  box-shadow: none;
+  border-width: 1px;
+  -webkit-appearance: none;
+
+  &:focus {
+    border-color: transparent;
+    box-shadow: 0 0 1px 1px rgba(45, 195, 232, 1);
+    background-color: $input-bg-focus;
+  }
+
+  &:hover {
+    background-color: $input-bg-focus;
+    @include animate-bg();
+  }
+}
+
+/*
+  Validation
+*/
+
+form {
+  @mixin form-control-invalid {
+    box-shadow: 0 0 1px 1px red;
+  }
+
+  &.ng-submitted.ng-invalid {
+    .ng-invalid {
+      @include form-control-invalid;
+
+      //special support for ui-select
+      .ui-select-match .ui-select-toggle {
+        @include form-control-invalid;
+      }
+    }
+  }
+
+  // Highlight invalid controls if user focus them in and then
+  /*
+  .ng-touched.ng-invalid {
+    @include form-control-invalid();
+
+    //special support for ui-select
+    .ui-select-match .ui-select-toggle {
+      @include form-control-invalid;
+    }
+  }
+  */
+}

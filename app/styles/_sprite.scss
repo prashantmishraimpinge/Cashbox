@@ -1,0 +1,44 @@
+@import 'styles/sprite-generated';
+
+@mixin sprites-2x() {
+  $image: nth(map_values($sprite), 1);
+  $image-path: map-get($image, 'image');
+  $image-path-retina: str-slice($image-path, 1, str-index($image-path, '.png') - 1) + '@2x.png';
+
+  background-image: url($image-path-retina);
+  background-size: map-get($image, 'total-width') map-get($image, 'total-height');
+}
+
+.sprite {
+  display: inline-block;;
+}
+
+.sprite:before {
+  content: '';
+  display: inline-block;
+}
+
+@each $key, $value in $sprite {
+  .sprite-#{$key} {
+    width: #{map_get($value, 'width')};
+    height: #{map_get($value, 'height')};
+  }
+  .sprite-#{$key}:before {
+    background-position: #{map_get($value, 'offset-x')} #{map_get($value, 'offset-y')};
+    background-image: url('#{map_get($value, 'image')}');
+    width: #{map_get($value, 'width')};
+    height: #{map_get($value, 'height')};
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+
+  .sprite:before {
+    @include sprites-2x();
+  }
+}

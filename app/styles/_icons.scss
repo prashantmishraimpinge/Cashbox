@@ -1,0 +1,82 @@
+.icon-rounded {
+  position: relative;
+}
+
+.icon-rounded:before {
+  z-index: 2;
+  position: relative;
+}
+
+.icon-rounded:after {
+  content: '';
+  position: absolute;
+  border-radius: 100%;
+  border: 1px solid rgb(237, 241, 247);
+  z-index: 1;
+}
+
+.icon-rounded:before,
+.icon-rounded:after {
+  background-color: rgb(251, 252, 253);
+  @include animate-bg();
+}
+
+.icon-rounded:hover {
+  &:after,
+  &:before {
+    background-color: $brand-primary;
+    @include animate-bg();
+  }
+}
+
+.cb-icon-edit:after {
+  width: 30px;
+  height: 30px;
+  left: -8px;
+  top: -7px;
+}
+
+//img.entity-icon {
+//  border-radius: 100%;
+//  background: #eee;
+//  padding: 3px;
+//}
+
+.cb-avatar {
+  border: 1px solid rgb(220, 224, 230);
+  background: rgb(255, 255, 255);
+  border-radius: 100%;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: 128px;
+  height: 128px;
+
+  img {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.cb-entity-icon {
+  border: 1px solid rgb(220, 224, 230);
+  background: rgb(255, 255, 255);
+  border-radius: 100%;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  line-height: 1;
+
+  img {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

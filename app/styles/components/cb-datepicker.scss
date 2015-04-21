@@ -1,0 +1,34 @@
+.cb-datepicker {
+  .btn {
+    border-radius: 0;
+    padding: 7px 12px;
+    text-transform: none;
+
+    &.active span {
+      color: #fff;
+    }
+  }
+
+  tbody .btn {
+    border: none;
+    min-width: 3em;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  thead tr:last-child th {
+    padding-bottom: $unit2x;
+    padding-top: $unit2x;
+  }
+
+  .dropdown-menu {
+    margin: 0;
+    padding: $unit2x;
+  }
+
+  *:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,104 @@
+.cb-page-categories {
+  .cb-actions-panel{
+    margin-bottom: $unit4x;
+    text-align: center;
+  }
+}
+
+.cb-categories-list {
+  padding: 0;
+  margin-bottom: $unit6x;
+  border: 1px solid $brand-default-border;
+  border-radius: $unit2x;
+  background-color: rgb(250,252,255);
+
+  li {
+    list-style-type: none;
+    padding: $unit2x $unit2x;
+    position: relative;
+    white-space: nowrap;
+
+    &:not(:last-child) {
+      display: block;
+      border-bottom: 1px solid $brand-default-border;
+      padding-left: 65px;
+    }
+
+    .cb-amount {
+      position: absolute;
+      right: $unit8x;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .cb-category-title {
+    background-color: #fff;
+    border-top-left-radius: $unit2x;
+    border-top-right-radius: $unit2x;
+
+    h4 {
+      margin: 0 $unit2x 0 0;
+      text-transform: uppercase;
+      font-size: $font-size-base;
+      font-weight: 300;
+      line-height: 40px;
+      .cb-category-name {
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+      }
+      .cb-entity-icon {
+        vertical-align: middle;
+      }
+    }
+
+    .cb-edit-category-link {
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .cb-amount {
+      font-size: $font-size-h2;
+    }
+  }
+
+  .cb-subcategory {
+    padding-top: $unit3x;
+    padding-bottom: $unit3x;
+
+    .cb-subcategory-title {
+      display: block;
+      margin-left: $unit4x;
+
+      span {
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &:hover {
+      background-color: #fff;
+    }
+
+    .cb-edit-subcategory-link {
+      position: absolute;
+      left: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .cb-category-actions {
+    text-align: center;
+  }
+}
+
+@import "categories.xs";
+@import "categories.sm";

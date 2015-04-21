@@ -1,0 +1,11 @@
+@media (min-width: $grid-float-breakpoint) {
+  .cb-categories-list {
+    li {
+      padding: $unit2x $unit8x;
+    }
+
+    li:not(:last-child) {
+      padding-right: 200px;
+    }
+  }
+}

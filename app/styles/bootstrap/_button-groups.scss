@@ -1,0 +1,25 @@
+.btn-group {
+  .btn {
+    border-radius: 0;
+    border-width: 1px;
+    text-transform: none;
+    line-height: 1.5;
+
+    &.active {
+      background-color: $btn-primary-bg !important;
+      border-color: $btn-primary-bg !important;
+      @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+
+      &:hover {
+        background-color: $btn-primary-bg-hover !important;
+        border-color: $btn-primary-bg-hover !important;
+      }
+    }
+
+    &:not(:first-child) {
+      border-left: none;
+    }
+  }
+}
+
+@import "button-groups.xs";

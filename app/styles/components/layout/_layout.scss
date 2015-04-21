@@ -1,0 +1,37 @@
+@import "layout.xs";
+
+.cb-page-section {
+  padding: $unit4x;
+  background-color: #fff;
+  border: 2px solid rgb(236,239,242);
+
+  .cb-section-header {
+    background-color: rgb(246, 250, 253);
+    border-bottom: 1px solid rgb(220,224,230);
+    margin-top: -$unit4x;
+    margin-right: -$unit4x;
+    margin-bottom: $unit4x;
+    margin-left: -$unit4x;
+    padding: $unit2x $unit4x;
+
+    h3 {
+      margin: 0;
+      padding: $unit 0;
+      text-transform: uppercase;
+    }
+  }
+
+  .cb-section-subheader {
+    padding: $unit2x $unit4x;
+    margin: 0 (-$unit4x) $unit4x (-$unit4x);
+    border-bottom: 1px solid rgb(236,239,242);
+  }
+
+  .cb-section-footer {
+    border-top: 2px solid rgb(236,239,242);
+    margin-right: -$unit4x;
+    margin-bottom: -$unit4x;
+    margin-left: -$unit4x;
+    padding: $unit2x $unit4x;
+  }
+}

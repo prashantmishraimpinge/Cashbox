@@ -1,0 +1,56 @@
+.ui-select-container {
+  &.ui-select-multiple {
+    padding: $padding-base-vertical $padding-base-horizontal / 2;
+
+    .ui-select-search {
+      padding: $padding-base-vertical $padding-base-horizontal / 2;
+      font-family: $font-family-base;
+    }
+
+    .ui-select-match > * {
+      line-height: $input-height-base;
+      vertical-align: top;
+
+      .btn-primary {
+        text-transform: none;
+      }
+    }
+
+    .ui-select-match-item {
+      padding: $unit $unit2x;
+      border-radius: 0;
+    }
+  }
+
+  .form-control {
+    border-radius: 0;
+    padding: $padding-base-vertical $padding-base-horizontal;
+    font-family: $font-family-base;
+  }
+
+  .ui-select-placeholder {
+    color: lighten($text-color, 50%);
+    font-size: $font-size-base;
+  }
+
+  .ui-select-choices-row.active > a {
+    background-color: $btn-primary-bg;
+    color: $btn-primary-color;
+
+    .text-muted {
+      color: $btn-primary-color;
+    }
+  }
+
+  &:hover {
+    .ui-select-placeholder {
+      color: $text-color;
+    }
+  }
+
+  .btn-default-focus {
+    box-shadow: 0 0 1px 1px $brand-primary;
+    outline: none;
+    background: inherit;
+  }
+}

@@ -1,0 +1,107 @@
+.cb-page-transactions {
+  .cb-section-header {
+    background: rgb(255, 255, 255);
+    margin-bottom: 0;
+
+    .cb-actions {
+      display: table;
+      width: 100%;
+
+      > * {
+        display: table-cell;
+        padding-right: $unit2x;
+        white-space: nowrap;
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+
+      h3 {
+        width: 10%;
+      }
+
+      .cb-transaction-actions {
+        text-align: right;
+      }
+    }
+  }
+
+  .cb-search-box {
+    width: 100%;
+  }
+
+  .cb-transaction-filters {
+    display: none;
+    margin-top: $unit4x;
+    border-bottom: 1px solid #eceff2;
+    .cb-reset-btn {
+      float: right;
+      margin-right: $unit3x;
+    }
+  }
+
+  .cb-filters-summary {
+    border-bottom: 1px solid #eceff2;
+    padding: $unit2x $unit4x;
+    margin: 0 (-$unit4x) ($unit2x) (-$unit4x);
+  }
+
+  .cb-transactions-count {
+    display: inline-block;
+    min-width: 3em;
+  }
+
+  .cb-money-summary {
+    h4 {
+      display: inline-block;
+      font-size: $font-size-base;
+      text-transform: uppercase;
+      font-weight: 300;
+      margin: 0;
+
+      &:not(:last-child) {
+        border-right: 1px solid $brand-default-border;
+      }
+    }
+  }
+
+  .cb-filters-visible {
+    .cb-transaction-filters {
+      display: block;
+    }
+  }
+
+  .grid-transactions {
+    thead th {
+      background-color: #f6fafd;
+    }
+  }
+}
+
+.grid-transactions {
+  thead th.td-amount:before {
+    display: none;
+  }
+
+  tbody {
+    .td-amount {
+      font-weight: 400;
+    }
+
+    .td-type-icon {
+      padding-right: 0 !important;
+    }
+
+    .td-category {
+      padding-left: 0 !important;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+@import "transactions.xs";
+@import "transactions.sm";

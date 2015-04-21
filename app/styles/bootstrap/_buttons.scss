@@ -1,0 +1,100 @@
+@mixin button-variant-states($hover, $active) {
+  &:focus,
+  &:active {
+    background-color: $active;
+    box-shadow: 0 0 1px 1px $active;
+  }
+
+  &:hover {
+    background-color: $hover;
+  }
+}
+
+.btn {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  @include button-size($padding-base-vertical, $padding-base-horizontal * 2, 14px, $line-height-base, $unit4x);
+
+  &:active,
+  &.active {
+    box-shadow: none;
+  }
+
+  &:focus,
+  &:active:focus,
+  &.active:focus {
+    outline: none;
+  }
+
+  &.cb-btn-add:before {
+    content: '+ ';
+    font-size: 30px;
+    line-height: 0;
+    position: relative;
+    left: -5px;
+    top: 5px;
+  }
+}
+
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  @include button-size(3px, 20px, $font-size-small, $line-height-small, 12px);
+  text-transform: none;
+}
+
+.btn-major {
+  @include button-variant($btn-major-color, $btn-major-bg, $btn-major-border);
+  @include button-variant-states($btn-major-bg-hover, $btn-major-bg-active);
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  @include button-variant-states($btn-primary-bg-hover, $btn-primary-bg-active);
+  text-transform: uppercase;
+}
+
+.btn-light {
+  @include button-variant($brand-light-color, $brand-light-bg, $brand-light-border);
+  @include button-variant-states($brand-light-bg, $brand-light-bg-active);
+}
+
+.btn-link.btn-danger {
+  color: $btn-danger-bg;
+
+  &:focus,
+  &:active:focus,
+  &.active:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px $btn-danger-bg;
+  }
+}
+
+.btn-expand {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    left: -10px;
+    top: -3px;
+    @include sprite(dropdown-light);
+  }
+
+  &.btn-expand-expanded:before {
+    transform: rotate(180deg);
+  }
+}
+
+.cb-btn-delete {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    left: -10px;
+    top: 2px;
+    @include sprite(common-delete-dark);
+  }
+}

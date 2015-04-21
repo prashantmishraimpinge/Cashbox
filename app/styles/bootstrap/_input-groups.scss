@@ -1,0 +1,24 @@
+.input-group {
+  .input-group-btn {
+    .btn {
+      border-radius: 0;
+      height: $input-height-base;
+    }
+  }
+
+  .input-group-btn {
+    .btn {
+      padding-left: $unit2x;
+      padding-right: $unit2x;
+    }
+
+    .btn-default {
+      background-color: $btn-default-bg-hover;
+
+      &:hover {
+        background-color: $btn-default-bg;
+        border-color: $btn-default-border;
+      }
+    }
+  }
+}

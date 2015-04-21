@@ -1,0 +1,137 @@
+<div class="cb-page-transactions">
+  <div class="cb-page-section" ng-class="{'cb-filters-visible': view.filtersVisible}">
+
+    <div class="cb-section-header">
+      <div class="cb-actions">
+        <h3>
+          <span translate>COMMON.TRANSACTIONS</span>
+          <span class="cb-transactions-count">({{filteredTransactions.length || 0}})</span>
+        </h3>
+
+        <div class="cb-transaction-search">
+          <span class="cb-search-box">
+            <input type="text" placeholder="{{'TRANSACTIONS.SEARCH-PLACEHOLDER' | translate}}" ng-model="search.query"
+                   class="form-control"/>
+            </span>
+        </div>
+
+        <div class="cb-filters-xs visible-xs-inline-block">
+          <button class="btn btn-major btn-expand" ng-click="toggleFilters()"
+                  ng-class="{'btn-expand-expanded': view.filtersVisible}">
+            <span ng-if="view.filtersVisible" translate>TRANSACTIONS.FILTERS.HIDE</span>
+            <span ng-if="!view.filtersVisible" translate>TRANSACTIONS.FILTERS.SHOW</span>
+          </button>
+        </div>
+
+        <div class="cb-transaction-actions">
+          <button class="btn btn-major cb-btn-add cb-add-transaction" ng-click="createTransaction()" translate>
+            TRANSACTIONS.ACTIONS.ADD
+          </button>
+          <button class="btn btn-default cb-btn-delete cb-delete-transactions" ng-click="deleteSelectedTransactions()"
+                  title="{{'TRANSACTIONS.ACTIONS.DELETE-BATCH-TITLE' | translate}}"
+                  ng-disabled="!hasSelectedTransactions()" translate>TRANSACTIONS.ACTIONS.DELETE-BATCH
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb-transaction-filters row">
+      <div class="col-xs-12 visible-xs-block">
+        <div class="cb-transaction-search form-group">
+          <span class="cb-search-box">
+            <input type="text" placeholder="{{'TRANSACTIONS.SEARCH-PLACEHOLDER' | translate}}" ng-model="search.query"
+                   class="form-control"/>
+            </span>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <div class="btn-group btn-group-justified">
+            <label class="btn btn-default" ng-model="search.types[type.id]" btn-checkbox ng-repeat="type in types"
+                   translate>{{type.title}}</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label translate>COMMON.PROJECTS</label>
+          <check-list list-items="projects" checked-items="search.projects" item-text="'$item.name'"
+                      item-id-property="id"></check-list>
+        </div>
+        <div class="form-group">
+          <label translate>COMMON.ACCOUNTS</label>
+          <check-list list-items="accounts" checked-items="search.accounts" item-text="'$item.name'"
+                      item-id-property="id"></check-list>
+        </div>
+        <div class="form-group">
+          <label translate>COMMON.TAGS</label>
+          <check-list list-items="tags" checked-items="search.tags" item-text="'$item.name'"
+                      item-id-property="id"></check-list>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <div class="btn-group btn-group-justified">
+            <label class="btn btn-default" ng-model="search.recurrence" btn-radio="recurrence.id"
+                   ng-repeat="recurrence in recurrences" uncheckable translate>{{recurrence.title}}</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Categories</label>
+          <ui-select ng-model="search.categories" multiple theme="bootstrap">
+            <ui-select-match placeholder="{{'TRANSACTIONS.SELECT-CATEGORIES-PLACEHOLDER' | translate}}">
+            <span ng-show="!$item.subcategory" class="select-match">
+              <span class="match-title">All</span><br>
+              <small class="match-subtitle">{{$item.category.name}}</small>
+            </span>
+            <span ng-show="$item.subcategory" class="select-match">
+              <span class="match-title">{{$item.subcategory.name}}</span><br>
+              <small class="match-subtitle">{{$item.category.name}}</small>
+            </span>
+            </ui-select-match>
+            <ui-select-choices group-by="groupByCategory" repeat="item in categories | filter: $select.search">
+            <span ng-show="!item.subcategory">
+              <span ng-bind-html="item.category.name | highlight: $select.search"></span>
+            </span>
+
+            <span ng-show="item.subcategory">
+              <span ng-bind-html="item.subcategory.name | highlight: $select.search"></span>
+            </span>
+
+            </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+      <div class="col-sm-6">
+	 <div class="form-group">
+          <label>Time Range</label>
+          <selector-time-range-transactions start-time="filters.timeRange.start"
+                               end-time="filters.timeRange.end"></selector-time-range>
+        </div>
+      </div>
+      <button class="btn btn-primary cb-reset-btn" ng-click="reset()" translate>COMMON.CONTROLS.RESET</button>
+    </div>
+
+    <div class="cb-filters-summary">
+      <button class="btn btn-major btn-expand hidden-xs" ng-click="toggleFilters()"
+              ng-class="{'btn-expand-expanded': view.filtersVisible}">
+        <span ng-if="view.filtersVisible" translate>TRANSACTIONS.FILTERS.HIDE</span>
+        <span ng-if="!view.filtersVisible" translate>TRANSACTIONS.FILTERS.SHOW</span>
+      </button>
+
+      <div class="cb-money-summary">
+        <h4>
+          <span translate>TRANSACTIONS.TRANSACTIONS-GRID.MONEY-IN</span>
+          <strong>{{getTotalIncome() | primaryCurrency:{showZero: true} }}</strong>
+        </h4>
+
+        <h4>
+          <span translate>TRANSACTIONS.TRANSACTIONS-GRID.MONEY-OUT</span>
+          <strong>{{getTotalExpenses() | primaryCurrency:{showZero: true} }}</strong>
+        </h4>
+      </div>
+    </div>
+
+    <transactions-grid source="filteredTransactions"></transactions-grid>
+  </div>
+</div>

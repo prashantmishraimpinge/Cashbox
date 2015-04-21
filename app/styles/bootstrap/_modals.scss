@@ -1,0 +1,43 @@
+.modal-header {
+  text-transform: uppercase;
+  background-color: rgb(246, 250, 253);
+
+  h3 {
+    padding: $unit 0;
+  }
+
+  .close {
+    text-shadow: none;
+    opacity: 1;
+    background-color: $btn-major-bg;
+    border-radius: 100%;
+    box-shadow: 0 0 1px 0 $btn-major-border;
+    font-size: 30px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    font-weight: 300;
+    color: $btn-major-color;
+
+    &:hover {
+      background-color: $btn-major-bg-hover;
+    }
+  }
+}
+
+.modal-content {
+  border-radius: 0;
+}
+
+.modal-footer {
+  padding-top: 0;
+
+  .cb-modal-actions > * {
+    display: block;
+    margin: 0 auto !important;
+  }
+
+  .cb-modal-actions .btn + .btn {
+    margin-top: $unit2x !important;
+  }
+}

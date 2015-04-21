@@ -1,0 +1,8 @@
+@media (max-width: $grid-float-breakpoint-max) {
+  .btn-group {
+    .btn {
+      padding-left: $unit;
+      padding-right: $unit;
+    }
+  }
+}

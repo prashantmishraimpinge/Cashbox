@@ -1,0 +1,30 @@
+.page-preferences {
+  section:not(:last-child) {
+    border-bottom: 1px solid rgb(220, 224, 230);
+    margin-bottom: $unit3x;
+  }
+
+  .cb-information {
+    margin-top: $unit3x;
+    font-family: $headings-font-family;
+    font-size: $font-size-small;
+    color: $text-muted;
+  }
+
+  .drop-box {
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px dashed transparent;
+
+    .cb-avatar {
+      width: 128px;
+      height: 128px;
+    }
+
+    &.dragover,
+    &:hover {
+      border-color: rgb(220, 224, 230);
+    }
+  }
+}

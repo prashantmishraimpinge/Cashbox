@@ -1,0 +1,36 @@
+@import "_navbar.xs";
+@import "_navbar.sm";
+
+.navbar {
+  .navbar-brand {
+    font-family: $headings-font-family;
+    color: $brand-primary;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  &.navbar-inverse {
+    font-family: $headings-font-family;
+    font-weight: 300;
+    font-size: 14px;
+    border-top: none;
+
+    .navbar-nav > li > a {
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .navbar-nav > li.active,
+    .navbar-nav > li > a:hover {
+      @each $class in home, analysis, transactions, accounts, projects, categories, tags, logout {
+        .sprite-menu-#{$class}-light:before {
+          @include sprite-position('menu-#{$class}-dark');
+        }
+      }
+    }
+  }
+
+  &.navbar-default {
+    margin-bottom: 0;
+  }
+}

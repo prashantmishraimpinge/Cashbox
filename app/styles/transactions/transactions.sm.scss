@@ -1,0 +1,29 @@
+@media (min-width: $grid-float-breakpoint) {
+
+  .cb-page-transactions {
+    .cb-filters-summary {
+      padding-right: 30em;
+      position: relative;
+    }
+
+    .cb-money-summary {
+      float: right;
+      text-align: right;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-right: $unit4x;
+
+      h4 {
+        display: inline-block;
+        vertical-align: middle;
+
+        &:not(:last-child) {
+          padding-right: $unit4x;
+          margin-right: $unit4x;
+        }
+      }
+    }
+  }
+}

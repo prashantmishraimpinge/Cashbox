@@ -1,0 +1,118 @@
+@media (max-width: $grid-float-breakpoint-max) {
+  .cb-page-transactions {
+    .cb-section-header {
+      .cb-transaction-search {
+        display: none;
+      }
+
+      .cb-transaction-actions {
+        position: fixed;
+        display: block;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        box-shadow: 0 0 50px 50px rgba(255, 255, 255, .5);
+        text-align: center !important;
+        white-space: normal;
+        > * {
+          margin-bottom: $unit;
+        }
+      }
+    }
+
+    .cb-money-summary {
+      display: table;
+      width: 100%;
+
+      h4 {
+        display: table-cell;
+        text-align: center;
+        padding: $unit 0;
+        width: 50%;
+      }
+    }
+
+    .cb-actions {
+      position: relative;
+    }
+
+    .cb-filters-xs {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-right: 0 !important;
+    }
+  }
+
+  transactions-grid {
+    display: block;
+
+    margin-left: -$unit4x;
+    margin-right: -$unit4x;
+  }
+
+  .cb-transactions-list {
+    padding: 0;
+    margin-bottom: $unit32x;
+
+    li {
+      list-style-type: none;
+      padding: $unit2x $unit4x $unit2x $unit10x;
+      border-bottom: 1px solid $brand-default-border;
+      position: relative;
+      white-space: nowrap;
+      display: block;
+      overflow: auto;
+
+      div[ng-click] {
+        cursor: pointer;
+      }
+    }
+
+    .cb-date,
+    .cb-tags {
+      float: right;
+    }
+
+    .cb-date,
+    .cb-tags {
+      float: right;
+      text-align: right;
+      width: 50%;
+    }
+
+    .cb-amount,
+    .cb-category-name {
+      float: left;
+      width: 50%;
+    }
+
+    .cb-tags,
+    .cb-category-name {
+      white-space: normal;
+    }
+
+    .cb-transaction-heading {
+      margin-bottom: $unit2x;
+      overflow: auto;
+    }
+
+    .cb-entity-icon {
+      vertical-align: middle;
+    }
+
+    input[type=checkbox] {
+      position: absolute;
+      left: $unit4x;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  //fix unfocusable input
+  .visible-xs-block {
+    z-index: 1;
+  }
+}
